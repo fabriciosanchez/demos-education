@@ -24,6 +24,18 @@ Do it to use it:
 
 ``gcloud auth application-default login``
 
-8. Finally, from a terminal pointing to the root of the application, run the following command to start Node's local server. It will be served at port 3000, as you can see in the image above.
+8. Copy and Paste the generated `access token` and update the variable `TOKEN` in `.env` file following the example shown there. Save the file.
+9. Finally, from a terminal pointing to the root of the application, run the following command to start Node's local server. It will be served at port 3000, as you can see in the image above.
+
+# How to extract questions?
+
+Extracting questions from a given text content is pretty simple. You can do this by following the steps below.
+
+1. First, select a content which you would like to extract questions from (for instance, you can use [this Johns Hopkins article](https://www.hopkinsmedicine.org/health/conditions-and-diseases/anatomy-of-the-brain) about human brain).
+2. Select the content and then press `ctrl + copy`.
+3. Go to the Questions Generator platform and click on the blue button at the top on the right that says "Generate questions".
+4. At the screens that opens up, type in the number of questions you would like to extract.
+5. Then, paste the content into the text area right below.
+6. Finally, click on "Analyze and Generate questions" blue button below.
 
 **Happy questions generation.**
