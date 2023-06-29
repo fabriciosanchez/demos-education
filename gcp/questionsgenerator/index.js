@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 const path = require('path');
@@ -7,11 +9,9 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')))
 
-// UPDATE THIS SESSION
-const PROJECT_ID = process.env.PROJECT_ID || '{YOUR-NUMERICAL-GCP-PROJECT-CODE}';
-const MODEL_ID = process.env.MODEL_ID || 'text-bison@001';`` //DON'T CHANGE IT
-const TOKEN = process.env.TOKEN || 'Bearer {YOUR-ACCESS-CODE}'
-
+const PROJECT_ID = process.env.PROJECT_ID;
+const MODEL_ID = process.env.MODEL_ID;
+const TOKEN = process.env.TOKEN ;
 app.get('/', (req, res) => {
     res.render('index', {});
 });
