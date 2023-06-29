@@ -27,7 +27,7 @@ Do it to use it:
 8. Copy and Paste the generated `access token` and update the variable `TOKEN` in `.env` file following the example shown there. Save the file.
 9. Finally, from a terminal pointing to the root of the application, run the following command to start Node's local server. It will be served at port 3000, as you can see in the image above.
 
-# How to extract questions?
+## How to extract questions?
 
 Extracting questions from a given text content is pretty simple. You can do this by following the steps below.
 
