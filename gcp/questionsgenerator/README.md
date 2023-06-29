@@ -31,7 +31,7 @@ Do it to use it:
 
 Extracting questions from a given text content is pretty simple. You can do this by following the steps below.
 
-1. First, select a content which you would like to extract questions from (for instance, you can use [this Johns Hopkins article](https://www.hopkinsmedicine.org/health/conditions-and-diseases/anatomy-of-the-brain) about human brain).
+1. First, select content which you would like to extract questions from (for instance, you can use [this Johns Hopkins article](https://www.hopkinsmedicine.org/health/conditions-and-diseases/anatomy-of-the-brain) about the human brain).
 2. Select the content and then press `ctrl + copy`.
 3. Go to the Questions Generator platform and click on the blue button at the top on the right that says "Generate questions".
 4. At the screens that opens up, type in the number of questions you would like to extract.
