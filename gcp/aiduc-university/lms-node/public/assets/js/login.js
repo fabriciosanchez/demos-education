@@ -65,7 +65,7 @@ async function checkUser() {
     else
     {
         document.getElementById("sidebar-nav-teacher").classList.remove('d-none');
-        document.getElementById("dashboard_type").innerHTML = "Teacher's Dashboard";
+        document.getElementById("dashboard_type2").innerHTML = "Teacher's Dashboard";
     }
 }
 
