@@ -61,11 +61,15 @@ async function checkUser() {
     {
         document.getElementById("sidebar-nav-student").classList.remove('d-none');
         document.getElementById("dashboard_type").innerHTML = "Student's Dashboard";
+        document.getElementById("breadcrumb-top-index").innerHTML = "Student's Dashboard";
+        document.getElementById("time-studying-working").innerHTML = "Time studying";
     }
     else
     {
         document.getElementById("sidebar-nav-teacher").classList.remove('d-none');
         document.getElementById("dashboard_type2").innerHTML = "Teacher's Dashboard";
+        document.getElementById("breadcrumb-top-index").innerHTML = "Teacher's Dashboard";
+        document.getElementById("time-studying-working").innerHTML = "Time working";
     }
 }
 
