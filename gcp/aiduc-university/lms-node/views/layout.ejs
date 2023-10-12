@@ -45,8 +45,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <span class="d-none d-lg-block">Learning Portal</span>
+        <span class="badge bg-primary rounded-pill" style="margin-left: 8px; color: white; font-size: x-small;">DEMO</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -217,7 +217,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <span>Web Designer</span>
+              <span id="user_role"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -271,10 +271,139 @@
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+    <!-- MENU STUDENT -->
+    <ul class="sidebar-nav d-none" id="sidebar-nav-student">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="/">
+          <i class="bi bi-grid"></i>
+          <span id="dashboard_type"></span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">ACADEMICS</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-book"></i>
+          <span>My content</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Books and Ebooks</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Recorded classrooms</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Video classes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Personalized study plan</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>My recommendations</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End My Content Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i>
+          <span>My practice</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Interactive tests</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Personal tutor</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Course advisor</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Challenge of the day</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-laptop"></i><span>My virtual labs</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End My Practice Nav -->
+
+      <li class="nav-heading">STUDENTS SERVICES</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-bookmarks"></i>
+          <span>Virtual library</span>
+        </a>
+      </li><!-- End Virtual Library Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-briefcase"></i>
+          <span>Career Center</span>
+        </a>
+      </li><!-- End Career Center Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-speedometer"></i>
+          <span>Reading assessment</span>
+        </a>
+      </li><!-- End Reading assessment Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-clipboard-data"></i>
+          <span>My performance</span>
+        </a>
+      </li><!-- End Reading assessment Nav -->
+
+      <li class="nav-heading">OPERATIONAL</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-inbox"></i>
+          <span>My documents</span>
+        </a>
+      </li><!-- End My documents Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-award"></i>
+          <span>My certificates</span>
+        </a>
+      </li><!-- End My certificates Nav -->
+    </ul>
+    <!-- END MENU STUDENT -->
+
+    <!-- MENU TEACHER -->
+    <ul class="sidebar-nav d-none" id="sidebar-nav-teacher">
+
+      <li class="nav-item">
+        <a class="nav-link " href="/">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -282,7 +411,8 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i>
+          <span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -500,8 +630,8 @@
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
-
     </ul>
+    <!-- END MENU TEACHER -->
 
   </aside><!-- End Sidebar-->
 

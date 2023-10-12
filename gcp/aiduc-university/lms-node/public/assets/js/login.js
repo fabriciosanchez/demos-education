@@ -51,8 +51,22 @@ async function checkUser() {
         alert(respJson.message);
         window.location.href = "/login"
     }
-    console.log(respJson);
-    document.getElementById("username").innerHTML = respJson.name
+
+    // Dynamically update fields in layout
+    document.getElementById("username").innerHTML = respJson.name;
+    document.getElementById("user_role").innerHTML = respJson.userType;
+
+    // Determines what side menu will load
+    if(respJson.userType == "Student")
+    {
+        document.getElementById("sidebar-nav-student").classList.remove('d-none');
+        document.getElementById("dashboard_type").innerHTML = "Student's Dashboard";
+    }
+    else
+    {
+        document.getElementById("sidebar-nav-teacher").classList.remove('d-none');
+        document.getElementById("dashboard_type").innerHTML = "Teacher's Dashboard";
+    }
 }
 
 function setOffLocalStorage()

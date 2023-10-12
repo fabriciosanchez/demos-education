@@ -9,9 +9,6 @@ const mongoose = require('mongoose');
 // Instantiating express webserver
 const app = express();
 
-// Starting db connection
-mongoose.connect(process.env.DB_URL);
-
 // Defining body response format (parse)
 app.use(express.json());
 
