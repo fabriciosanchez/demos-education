@@ -63,6 +63,7 @@ async function checkUser() {
         document.getElementById("dashboard_type").innerHTML = "Student's Dashboard";
         document.getElementById("breadcrumb-top-index").innerHTML = "Student's Dashboard";
         document.getElementById("time-studying-working").innerHTML = "Time studying";
+        document.getElementById("df-chat-buble").setAttribute("chat-title", "Student's assistant");
     }
     else
     {
@@ -70,6 +71,7 @@ async function checkUser() {
         document.getElementById("dashboard_type2").innerHTML = "Teacher's Dashboard";
         document.getElementById("breadcrumb-top-index").innerHTML = "Teacher's Dashboard";
         document.getElementById("time-studying-working").innerHTML = "Time working";
+        document.getElementById("df-chat-buble").setAttribute("chat-title", "Teacher's assistant");
     }
 }
 

@@ -1,4 +1,4 @@
-<!-- STUDENT'S DASHBOARD -->
+<!-- STUDENTs / TEACHERS DASHBOARD -->
 <main id="main" class="main">
 
   <div class="pagetitle">
@@ -428,4 +428,19 @@
     </div>
   </section>
 
-</main><!-- End STUDENT'S DASHBOARD -->
+</main>
+<!-- End STUDENTs / TEACHERS DASHBOARD -->
+
+<!-- BOT -->
+<script src=" https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger project-id="analytics-demo-346615" agent-id="dc4010ff-6368-4681-99eb-aa8487034578" language-code="pt-br">
+  <df-messenger-chat-bubble id="df-chat-buble" chat-title="Teacher's assistant"></df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
