@@ -1,9 +1,9 @@
-const TOKEN_KEY = "aiduc_lms_user_token";
+const TOKEN_KEY = "{your-token-key}";
 
 async function login() {
     const email = document.getElementById('formEmail').value;
     const password = document.getElementById('formPassword').value;
-    const url = "http://localhost:3002/users/login";
+    const url = "https://{your-address}/users/login";
 
     if(email === "" || email === null) {
         return;
@@ -34,7 +34,7 @@ function setLocalStorage(name, value)
 }
 
 async function checkUser() {
-    const url = "http://localhost:3002/users/me";
+    const url = "https://{your-address}/users/me";
     const token = localStorage.getItem(TOKEN_KEY);
     if(!token)
     {
