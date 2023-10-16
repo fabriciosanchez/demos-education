@@ -38,7 +38,7 @@
               &nbsp;Demo's repo
               </span>
             </a>
-            <a href="#" target="_blank">
+            <a href="https://{your-address}/login" target="_blank">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                &nbsp;Student/Teacher Portal
@@ -86,9 +86,7 @@
     <!-- end header section -->
     
     <!-- Injecting pages content -->
-
     <%- include(`pages/${page}.ejs`) %>
-
     <!-- end pages injection -->
 
   <!-- info section -->
@@ -188,9 +186,10 @@
   <!-- End Google Map -->
 
   <!-- Q&A Bot -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-  <df-messenger project-id="{project-id}" agent-id="{agent-id}" language-code="{language-code}">
-    <df-messenger-chat-bubble chat-title="{chat-title}">
+  <!-- This information should be gathered with Dialogflow  -->
+  <script src="{your-script-link}"></script>
+  <df-messenger project-id="{your-project-id}" agent-id="{your-agent-id}" language-code="{your-language}">
+    <df-messenger-chat-bubble chat-title="{your-title}">
     </df-messenger-chat-bubble>
   </df-messenger>
   <style>
