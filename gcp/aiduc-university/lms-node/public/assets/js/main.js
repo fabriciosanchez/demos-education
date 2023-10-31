@@ -5,6 +5,10 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Base API URL
+const BASE_API_URL = 'http://localhost:3002'; // You should update this address accordingly if necessary
+
 (function() {
   "use strict";
 

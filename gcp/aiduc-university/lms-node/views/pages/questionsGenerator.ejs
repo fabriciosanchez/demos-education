@@ -1,0 +1,101 @@
+<!-- STUDENTs / TEACHERS DASHBOARD -->
+<main id="main" class="main">
+
+    <!-- Start Page Title -->
+    <div class="pagetitle">
+      <h1>
+
+      </h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" id="breadcrumb-top">Questions generator</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+  
+    <!-- Internal title -->
+    <span class="title-internal">You are about to generate questions</span><br \>
+    <span class="subtitle-internal">But before that, I need more context. Please, type below.</span>
+    <!-- End Internal title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-sm card info-card" style="margin-top: 20px; padding: 20px;">
+                <div class="col-12">
+                    <label for="formPrompt" class="form-label subtitle-internal">Give me a well-defined instruction:</label>
+                    <div class="input-group has-validation">
+                        <input type="text" name="formPrompt" class="form-control" id="formPrompt" required>
+                        <div class="invalid-feedback" id="feedback-prompt"></div>
+                    </div>
+                </div>
+                <div class="col-2" style="margin-top: 10px;">
+                    <button class="btn btn-primary w-100 subtitle-internal" onclick="generateQuestions()">
+                        <span class="bi bi-patch-question"></span> Generate questions
+                    </button>
+                    <span id="loading-spinner"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm card info-card d-none" style="padding: 20px;" id="card-questions">
+                <div class="col-12">
+                    <span class="title-internal">Here are some possible questions</span>
+                </div>
+                <div style="margin-top: 15px;" class="subtitle-internal">
+                    <table class="table" id="table-questions">
+                        <thead>
+                            <tr style="font-weight: bold;">
+                                <td>
+                                    Question
+                                </td>
+                                <td>
+                                    Suggested answer
+                                </td>
+                                <td>
+                                    Actions
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody id="body-questions-answers">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  </main>
+
+  <div class="modal fade" id="modal-answer" tabindex="-1" aria-labelledby="modal-answer-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="answer-title">Possible answer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body subtitle-internal" id="answer-body">
+            <p id="selected-question" style="font-weight: bold;"></p>
+            <p id="selected-answer"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- BOT -->
+<script src=" https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger project-id="analytics-demo-346615" agent-id="dc4010ff-6368-4681-99eb-aa8487034578" language-code="pt-br">
+  <df-messenger-chat-bubble id="df-chat-buble" chat-title="Teacher's assistant"></df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>

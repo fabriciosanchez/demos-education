@@ -2,6 +2,9 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 
+// Importing middlewares
+const auth = require('../middlewares/auth');
+
 // Importing data models
 const usersModel = require('../models/users');
 
@@ -41,15 +44,9 @@ router.post('/login', async(req, res) => {
 });
 
 // Route: User identity detail
-router.get('/me', async(req, res) => {
+router.get('/me', auth, async(req, res) => {
     try {
-        const [protocol, token] = req.headers.authorization.split(' ');
-        const payload = jwt.verify(token, process.env.JWT_SECRET);
-        if(!payload)
-        {
-            res.status(401).json( { message: 'Unauthorized.' });
-        }
-        const user = await usersModel.findOne({ _id: payload.id });
+        const user = await usersModel.findOne({ _id: req.userId });
         if(!user)
         {
             return res.status(401).json( { message: 'Unauthorized.' });

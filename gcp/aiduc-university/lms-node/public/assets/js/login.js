@@ -1,9 +1,9 @@
-const TOKEN_KEY = "{your-token-key}";
+const TOKEN_KEY = "aiduc_lms_user_token";
 
 async function login() {
     const email = document.getElementById('formEmail').value;
     const password = document.getElementById('formPassword').value;
-    const url = "https://{your-address}/users/login";
+    const url = `${BASE_API_URL}/users/login`;
 
     if(email === "" || email === null) {
         return;
@@ -34,7 +34,8 @@ function setLocalStorage(name, value)
 }
 
 async function checkUser() {
-    const url = "https://{your-address}/users/me";
+    const url = `${BASE_API_URL}/users/me`;
+
     const token = localStorage.getItem(TOKEN_KEY);
     if(!token)
     {
@@ -53,25 +54,27 @@ async function checkUser() {
     }
 
     // Dynamically update fields in layout
-    document.getElementById("username").innerHTML = respJson.name;
-    document.getElementById("user_role").innerHTML = respJson.userType;
+    tryInnerHTML("username", respJson.name);
+    tryInnerHTML("user_role", respJson.userType);
 
     // Determines what side menu will load
     if(respJson.userType == "Student")
     {
-        document.getElementById("sidebar-nav-student").classList.remove('d-none');
-        document.getElementById("dashboard_type").innerHTML = "Student's Dashboard";
-        document.getElementById("breadcrumb-top-index").innerHTML = "Student's Dashboard";
-        document.getElementById("time-studying-working").innerHTML = "Time studying";
-        document.getElementById("df-chat-buble").setAttribute("chat-title", "Student's assistant");
+        document.getElementById("sidebar-nav-student")?.classList.remove('d-none');
+        tryInnerHTML("dashboard_type", "Student's Dashboard");
+        tryInnerHTML("time-studying-working", "Time studying");
+        document.getElementById("df-chat-buble")?.setAttribute("chat-title", "Student's assistant");
+        document.getElementById('profile-user-signedin')?.setAttribute('src', '/assets/img/profile-asoka.png');
+        tryInnerHTML("breadcrumb-top-index", "Student's Dashboard");
     }
     else
     {
-        document.getElementById("sidebar-nav-teacher").classList.remove('d-none');
-        document.getElementById("dashboard_type2").innerHTML = "Teacher's Dashboard";
-        document.getElementById("breadcrumb-top-index").innerHTML = "Teacher's Dashboard";
-        document.getElementById("time-studying-working").innerHTML = "Time working";
-        document.getElementById("df-chat-buble").setAttribute("chat-title", "Teacher's assistant");
+        document.getElementById("sidebar-nav-teacher")?.classList.remove('d-none');
+        tryInnerHTML("dashboard_type2", "Teacher's Dashboard");
+        tryInnerHTML("time-studying-working", "Time working");
+        document.getElementById("df-chat-buble")?.setAttribute("chat-title", "Teacher's assistant");
+        document.getElementById('profile-user-signedin')?.setAttribute('src', '/assets/img/profile-luke.png');
+        tryInnerHTML("breadcrumb-top-index", "Teacher's Dashboard");
     }
 }
 
@@ -79,4 +82,14 @@ function setOffLocalStorage()
 {
     localStorage.removeItem(TOKEN_KEY);
     window.location.href = "/login";
+}
+
+function tryInnerHTML(id, value) {
+    
+    const element = document.getElementById(id);
+
+    if(element)
+    {
+        element.innerHTML = value;
+    }
 }

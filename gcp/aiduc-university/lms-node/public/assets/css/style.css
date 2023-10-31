@@ -1231,3 +1231,14 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+.title-internal {
+  font-size: large; 
+  font-weight: bold; 
+  color: #012970; 
+  font-family: 'nunito';
+}
+
+.subtitle-internal {
+  font-size: small;
+}

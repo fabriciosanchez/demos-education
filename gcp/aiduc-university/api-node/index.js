@@ -21,6 +21,7 @@ app.use(express.json());
 
 // Registering routes endpoints
 app.use('/users', require('./controllers/users'));
+app.use('/questions', require('./controllers/questions'));
 
 app.get('/temp', async(req, res) => {
     // const user = await usersModel.create({ name: 'Fabricio', email: 'flscc2002@yahoo.com.br', password: '123' })

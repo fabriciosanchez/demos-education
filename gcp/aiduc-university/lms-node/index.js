@@ -24,6 +24,9 @@ app.get('/', async(req, res) => {
     //res.render('layout', { page: 'index', userGit: response.data});
     res.render('layout', { page: 'index' });
 });
+app.get('/questionsGenerator', async(req, res) => {
+    res.render('layout', { page: 'questionsGenerator' });
+});
 
 app.get('/login', async(req, res) => {
     res.render('layout-login', { page: 'login' });
